@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  
+  "engines": {
+    "node": "16"
+  },
+  
   "dependencies": {
     "@heroicons/react": "^2.0.14",
     "@mux/mux-player": "^1.7.1",
@@ -18,7 +23,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/types": "^3",
     "@sanity/ui": "^1",
-    "@types/node": "15.19.0",
+    "@types/node": "16.0.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "eslint": "8.32.0",
