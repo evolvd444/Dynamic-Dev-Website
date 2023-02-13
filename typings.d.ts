@@ -57,19 +57,13 @@ export interface Project extends SanityBody {
     title: string
     _type: "project";
     image: Image;
-    video: MuxVideo[];
+    video: string;
+    playbackId:string;
     linkToBuild: string;
     summary: string;
     technologies: Technology[];
 }
-export interface MuxVideo extends SanityBody {
-    [x: string]: any;
-    _type: "muxVideo";
-    title: string,
-    name: string,
-    
 
-}
 export interface Social extends SanityBody {
     _type: "social";
     title: string;

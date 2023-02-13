@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import {Project} from "../typings"
 import { urlFor } from "../sanity";
 import MuxPlayer from '@mux/mux-player-react';
+
 type Props = {
     project: Project[];
+    
 };
 
 const Projects = ({project}: Props) => {
@@ -20,16 +22,16 @@ const Projects = ({project}: Props) => {
       transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col text-left max-w-full justify-evenly mx-auto items-center z-0"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px]  text-gray-500 text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] z-30 lg:top-12 sm:top-20">
+      <h3 className="absolute top-24 uppercase tracking-[20px]  text-gray-500 text-2xl   z-30 lg:top-12 sm:top-20">
         Projects
       </h3>
-      <div className="relative w-full flex over-flow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 sm: scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-purple-700 ">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-purple-700 ">
         {project?.map((aProject, i, ) => (
           // eslint-disable-next-line react/jsx-key
 
           // eslint-disable-next-line react/jsx-key
-          <div className=" w-screen  flex-shrink-0 flex-wrap snap-center flex-row flex  space-y-5 items-center overflow-y-scroll justify-center p-2 md:p-7 h-screen sm:w-full pt-35 xl:mt-12  ">
-            <div className="flex justify-center items-center object-center w-screen h-screen sm:h-screen flex-col ">
+          <div className=" w-screen  flex-shrink-0 flex-wrap snap-center flex-row flex  items-center overflow-y-scroll justify-center p-2 md:p-7 h-screen sm:w-full pt-35 xl:mt-12  ">
+            <div className="flex justify-center items-center object-center -space-y-[70px] w-screen h-screen sm:h-screen flex-col ">
               <motion.div
                 initial={{
                   y: -300,
@@ -38,20 +40,27 @@ const Projects = ({project}: Props) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2 }}
                 viewport={{ once: true }}
-                className=" object-center md:w-[80vw] md:h-[40vh] md:mt-12vh sm:h-[31vh] sm:w-[97vw] sm:mt-0 sm:mb-7 mt-0 justify-center items-center mb-12 flex lg:-mt-7 lg:w-[82vh] lg:h-[55vh] sxl:mt-10 xl:h-[40vh] xl:w-[40vw]"
+                className=" object-center   md:w-[80vw] md:h-[40vh] md:mt-12vh sm:h-[33vh] sm:w-[97vw] sm:mt-0 sm:mb-7 mt-0 justify-center items-center mb-12 flex lg:-mt-[70px] lg:w-[72vh] lg:h-[52vh] xl:mt-10 xl:h-[40vh] xl:w-[40vw]"
               >
-                 <MuxPlayer
+                 
+                        
+                     <MuxPlayer
             streamType="on-demand"
-            playbackId={aProject?.video}
+            key= {aProject.playbackId}
+            playbackId={aProject.playbackId}
             metadata={{
             video_id: "video-id-54321",
             video_title: "Test video title",
             viewer_user_id: "user-id-007",
+            
       }}
+      className = 'shadow-proj sm:mb-20 shadow-purple-400/50 mb-5 -z-10'
     />
+                   
+                
               </motion.div>
 
-              <div className="space-y-10 xl:pb-20 xl: px-0 md:px-10 sm:px-1 max-w-6xl sm:mt-0 sm:h-[300px] lg:-mt-12 ">
+              <div className="space-y-5 xl:pb-20  px-0 md:px-10 sm:px-1 max-w-6xl sm:mt-0 sm:h-[300px] lg:-mt-12 ">
                 <h4 className="text-4xl font-semibold text-center">
                   <span className=" underline decoration-[#34f5d5]/70">
                     {" "}
@@ -59,7 +68,7 @@ const Projects = ({project}: Props) => {
                   </span>{" "}
                   {aProject.title}
                 </h4>
-                <div className="flex items-center space-x-2 justify-center">
+                <div className="flex items-center space-x-2  justify-center">
                     {aProject?.technologies.map((technology)=> (
                         
                         <img
@@ -70,7 +79,7 @@ const Projects = ({project}: Props) => {
                         />
                     ))}
                 </div>
-                <p className="text-lg text-center md:text-left sm:pb-20 ">
+                <p className="text-lg text-center h-32 bg-gray-700/40 overflow-y-scroll  scrollbar-track-gray-400/20 scrollbar-thumb-indigo-400 md:text-left sm:h-48 sm:pb-20 ">
                   The Fullcourt App is the first of its kind. It aims to solve
                   the issues of the pick-up basketball scene. Often it can be
                   hard to find basketball games on your schedule and on demand.

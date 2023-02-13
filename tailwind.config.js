@@ -7,7 +7,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    
+    boxShadow: {
+      'proj': '0px -2px 80px -23px rgba(0, 0, 0, 0.3)',
+    },
     screens: {
       
       'sm': {'min': '250px', 'max': '550px'},

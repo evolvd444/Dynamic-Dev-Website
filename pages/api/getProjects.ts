@@ -4,14 +4,13 @@ import {sanityClient} from "../../sanity"
 import { Project } from '../../typings'
 
 const query = groq`
-    *[_type == "project"] {
-        ...,
-        technologies[]->
-    } {
-        ...,
-        video[]->
-    }
-`;
+*[_type == "project"] {
+    ...,
+    technologies[]->, ...
+       video.asset->
+} 
+`; //66de4299-2a0f-479d-90eb-2a5d3e51e9e1
+//_rev:QJq5vKNFz1PZLkLgGDnK5Z
 type Data = {
   projects: Project[]
 }

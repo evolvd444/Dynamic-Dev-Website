@@ -62,7 +62,7 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
           <div className=" sticky bottom-3 sm:-bottom-3 w-full cursor-pointer" >
           <footer className= "flex items-center justify-center">
             <Image
-            className="h-[120px] w-80 sm:w-[70%] rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+            className="h-[100px] w-80 sm:w-[65%] rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             src={Logo}
             alt=""
             />

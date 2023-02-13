@@ -18,7 +18,7 @@ const Skill = ({ skill, directionLeft}: Props) => {
         src={urlFor(skill?.image).url()}
         alt="image of skill"
         initial={{
-          x: directionLeft ? -100 : 200,
+          x: directionLeft ? -60 : 100,
           opacity: 0,
         }}
         transition={{ duration: 1 }}
