@@ -1,21 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
 import { GetStaticProps } from "next";
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import WorkExperience from "../components/WorkExperience";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import ContactMe from "../components/ContactMe";
+import Header from "../app/components/Header";
+import Hero from "../app/components/Hero";
+import About from "../app/components/About";
+import WorkExperience from "../app/components/WorkExperience";
+import Skills from "../app/components/Skills";
+import Projects from "../app/components/Projects";
+import ContactMe from "../app/components/ContactMe";
 import Link from "next/link";
 import Logo from "../public/FAACD828-E87A-4C20-99C8-2A9D0A22521D.png"
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocials } from "@/utils/fetchSocials";
-import { PageInfo, Experience, Skill, Project, Social } from "../typings";
-import { fetchProjects } from "@/utils/fetchProjects";
+import { fetchSocials } from "../utils/fetchSocials";
+import { PageInfo, Experience, Skill, Project, Social } from "../typings.d";
+import { fetchProjects } from "../utils/fetchProjects";
 
 type Props ={
   pageInfo: PageInfo;
@@ -95,6 +95,7 @@ export default Home;
 
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -108,6 +109,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       projects,
       socials,
+      fallback: true
     },
 
     //Next.js will attempt to regenerate the page
