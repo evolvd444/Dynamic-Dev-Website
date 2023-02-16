@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {groq} from 'next-sanity'
-import {sanityClient} from "../../lib/sanity.client"
+import sanityClient from "../../lib/sanity.client"
 import { Skill } from '../../typings.d'
 
 
