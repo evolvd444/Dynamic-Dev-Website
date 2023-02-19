@@ -3,12 +3,13 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     boxShadow: {
-      'proj': '0px -2px 80px -23px rgba(0, 0, 0, 0.3)',
+      'proj': '0px 4px 85px -48px rgba(0, 0, 0, 0.3)',
     },
     screens: {
       

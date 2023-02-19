@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
@@ -13,9 +13,9 @@ import Logo from "../public/FAACD828-E87A-4C20-99C8-2A9D0A22521D.png"
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocials } from "@/utils/fetchSocials";
+import { fetchSocial } from "../utils/fetchSocials";
 import { PageInfo, Experience, Skill, Project, Social } from "../typings";
-import { fetchProjects } from "@/utils/fetchProjects";
+import { fetchProjects } from "../utils/fetchProjects";
 
 type Props ={
   pageInfo: PageInfo;
@@ -59,11 +59,13 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 
       <Link href="#hero">
        
-          <div className=" sticky bottom-3 sm:-bottom-3 w-full cursor-pointer" >
-          <footer className= "flex items-center justify-center">
+          <div className=" sticky bottom-3 sm:-bottom-3 cursor-pointer" >
+          <footer className= "flex items-center justify-center ">
             <Image
-            className="h-[100px] w-80 sm:w-[65%] rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+            className="  rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             src={Logo}
+           height="110%"
+           width="240%"
             alt=""
             />
              </footer>
@@ -94,12 +96,12 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 export default Home;
 
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
+  const socials: Social[] = await fetchSocial();
 
   return {
     props: {
@@ -113,7 +115,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     //Next.js will attempt to regenerate the page
     // - When a request comes in
     // - At most once every 10 seconds
-    revalidate: 30,
+   
   };
 
   

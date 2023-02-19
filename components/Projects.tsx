@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React from "react";
-import ReactPlayer from "react-player";
+
 import { motion } from "framer-motion";
 import {Project} from "../typings"
-import { urlFor } from "../sanity";
+import { urlFor } from "../sanity/sanity";
 import MuxPlayer from '@mux/mux-player-react';
 
 type Props = {

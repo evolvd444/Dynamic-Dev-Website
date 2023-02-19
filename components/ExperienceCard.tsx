@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import TSLogo from "../public/tsTransparent.png";
 import TypeLogo from "../public/typescript.svg";
 import JSLogo from "../public/transparent-javascript-logo.png";
-import { Experience } from "@/typings";
-import { urlFor } from "@/sanity";
+import { Experience } from "../typings";
+import { urlFor } from "../sanity/sanity";
 
 type Props = {
   experience: Experience;
