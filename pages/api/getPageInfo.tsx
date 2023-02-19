@@ -15,6 +15,6 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
     const pageInfo: PageInfo= await sanityClient.fetch(query)
- console.log("this is paginfo stuff ----->" + res.status(200).json({pageInfo}))
+ 
   res.status(200).json({ pageInfo })
 }
