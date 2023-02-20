@@ -1,5 +1,5 @@
-
-import {defineField, defineType,} from 'sanity'
+//@ts-expect-error
+import {defineField, defineType} from 'sanity'
 
 export const experience = defineType({
   name: 'experience',

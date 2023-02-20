@@ -1,4 +1,4 @@
-
+//@ts-expect-error
 import {defineField, defineType} from 'sanity'
 
 export const pageInfo = defineType({
