@@ -17,8 +17,14 @@ type Inputs = {
   
 const ContactMe = ({ pageInfo }: Props) => {
 
-    const { register, handleSubmit,} = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (formData) => {window.location.href = `mailto:omar@thedynamic.dev?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`};
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm<Inputs>();
+      const onSubmit: SubmitHandler<Inputs> = (data) => {
+        window.location.href = `mailto:${pageInfo.email}?subject=${data.subject}&body=Hi, my name is ${data.name}. ${data.message}`;
+      };
 
   return (
     <motion.div className= " h-screen flex sm:px-10 relative sm:flex-col flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
