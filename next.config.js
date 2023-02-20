@@ -9,11 +9,10 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-
   images: {
         domains: ['cdn.sanity.io'],
         
     }
 }
 
-export default nextConfig
+module.exports = nextConfig

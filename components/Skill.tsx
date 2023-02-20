@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import JS from "../public/javascript-cool.svg";
 import { Skill } from "../typings";
-import { urlFor } from "../sanity";
+import { urlFor } from "../lib/sanity";
 type Props = {
   skill: Skill;
   directionLeft?: boolean;

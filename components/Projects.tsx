@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
-import { urlFor } from "../sanity";
+import { urlFor } from "../lib/sanity";
 import Link from "next/link";
 import MuxPlayer from '@mux/mux-player-react';
 import Image from "next/image";

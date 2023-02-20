@@ -5,7 +5,7 @@ import TSLogo from "../public/tsTransparent.png";
 import TypeLogo from "../public/typescript.svg";
 import JSLogo from "../public/transparent-javascript-logo.png";
 import { Experience } from "../typings";
-import { urlFor } from "../sanity";
+import { urlFor } from "../lib/sanity";
 
 type Props = {
   experience: Experience;
