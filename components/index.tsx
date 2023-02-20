@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import { GetServerSideProps } from "next";
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import WorkExperience from "../components/WorkExperience";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import ContactMe from "../components/ContactMe";
+import { GetStaticProps } from "next";
+import Header from "./Header";
+import Hero from "./Hero";
+import About from "./About";
+import WorkExperience from "./WorkExperience";
+import Skills from "./Skills";
+import Projects from "./Projects";
+import ContactMe from "./ContactMe";
 import Link from "next/link";
 import Logo from "../public/FAACD828-E87A-4C20-99C8-2A9D0A22521D.png"
 import { fetchPageInfo } from "../utils/fetchPageInfo";
@@ -96,7 +96,7 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 export default Home;
 
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
