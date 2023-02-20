@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import {SocialIcon} from "react-social-icons"
 import {motion} from "framer-motion"
@@ -26,7 +27,7 @@ function Head({ socials }: Props) {
         }}
         className= "flex flex-row items-center">
             {/* Social Icons*/}
-            {socials.map((social) => (
+            {socials?.map((social) => (
             <SocialIcon
             key={social._id}
                 url={social.url}
@@ -64,7 +65,7 @@ function Head({ socials }: Props) {
             }}
             className= "flex flex-row items-center text-gray-300 cursor-pointer">
 
-                <SocialIcon url= "https://www.youtube.com/@thedynamicdev" 
+            <SocialIcon url= "https://www.youtube.com/@thedynamicdev" 
             className= "cursor-pointer"
             network="email"
             fgColor="gray" 

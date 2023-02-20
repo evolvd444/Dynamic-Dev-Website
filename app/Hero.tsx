@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import {Cursor, useTypewriter} from 'react-simple-typewriter'
 import BackgroundCircles from "./BackgroundCircles"
@@ -5,7 +6,8 @@ import Img from 'next/image'
 import Link from 'next/link'
 import ProfileImage from '../public/199C99F5-5514-4967-93ED-175312928B64.png'
 import {PageInfo} from '../typings' 
-import {  urlFor } from '../sanity'
+import  {urlFor}  from '../sanity'
+import Image from 'next/image'
 
 
 type Props = {
@@ -31,7 +33,7 @@ const Hero = ({pageInfo}: Props) => {
     <div className=" h-screen flex flex-col space-y-4 items-center justify-center text-center overflow-hidden">
         <BackgroundCircles />
 
-        <img
+        <Image
 
           src= {urlFor(pageInfo?.heroImage).url()}
           alt= "image of Omar"

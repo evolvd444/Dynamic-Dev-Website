@@ -1,4 +1,4 @@
-
+"use client"
 
 import React from "react";
 import Link from "next/link";
@@ -78,7 +78,8 @@ function Projects({projects}: Props) {
                     {project?.technologies.map((technology)=> (
                         
                         <Image
-                       
+                       width={10}
+                       height={10}
                         className="h-10 w-10"
                         key={technology._id}
                         src={urlFor(technology.image).url()}

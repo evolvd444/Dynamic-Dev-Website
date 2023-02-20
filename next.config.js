@@ -2,16 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: '',
-  async redirects() {
-    return [
-      {
-        source: '/about',
-        destination: '/',
-        permanent: true,
-      },
-    ]
+  experimental: {
+    appDir: true,
+    topLevelAwait: true
   },
+  images: {
+    domains: [ "cdn.sanity.io"],
+
+  }
   // images: {
     
   //   remotePatterns: [

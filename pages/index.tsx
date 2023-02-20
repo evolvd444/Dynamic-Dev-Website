@@ -1,21 +1,41 @@
+"use client"
 import Head from "next/head";
 import Image from "next/image";
-import { GetStaticProps } from "next";
-import Header from "../components/Head";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import WorkExperience from "../components/WorkExperience";
-import Skills from "../components/Skills";
-import Projects from "../components/Projects";
-import ContactMe from "../components/ContactMe";
+import { GetServerSideProps } from "next";
+import Header from "../app/Head";
+import Hero from "../app/Hero";
+import About from "../app/About";
+import WorkExperience from "../app/WorkExperience";
+import Skills from "../app/Skills";
+import Projects from "../app/Projects";
+import ContactMe from "../app/ContactMe";
 import Link from "next/link";
 import Logo from "../public/FAACD828-E87A-4C20-99C8-2A9D0A22521D.png"
-import { fetchPageInfo } from "../utils/fetchPageInfo";
+
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocial } from "../utils/fetchSocials";
 import { PageInfo, Experience, Skill, Project, Social } from "../typings";
 import { fetchProjects } from "../utils/fetchProjects";
+
+
+const fetchPageInfo = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`
+  );
+
+  // check res for error
+  if (!res.ok) {
+    console.log(res.statusText);
+  }
+
+  const data = await res.json();
+  const pageInfo: PageInfo = data.pageInfo;
+
+  //   console.log("fetching", pageInfo);
+
+  return pageInfo;
+};
 
 type Props ={
   pageInfo: PageInfo;
@@ -64,8 +84,8 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
             <Image
             className="  rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             src={Logo}
-           height="110%"
-           width="240%"
+           height={222}
+           width={444}
             alt=""
             />
              </footer>
@@ -96,7 +116,7 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 export default Home;
 
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -110,13 +130,13 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       skills,
       projects,
       socials,
-      fallback: true,
+      fallback: true
     },
 
     //Next.js will attempt to regenerate the page
     // - When a request comes in
     // - At most once every 10 seconds
-   revalidate:10,
+ 
   };
 
   
