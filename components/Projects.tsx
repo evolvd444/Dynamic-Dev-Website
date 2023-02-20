@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {Project} from "../typings"
-import { urlFor } from "../sanity/sanity";
+import { urlFor } from "../sanity";
 import MuxPlayer from '@mux/mux-player-react';
 import Image from "next/image";
 

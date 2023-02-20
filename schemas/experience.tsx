@@ -1,5 +1,5 @@
 
-import {defineField, defineType, defineConfig} from 'sanity'
+import {defineField, defineType,} from 'sanity'
 
 export const experience = defineType({
   name: 'experience',

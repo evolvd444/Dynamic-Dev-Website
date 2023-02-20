@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import Image from "next/image";
 import { PageInfo } from "../typings";
-import { urlFor } from "../sanity/sanity";
+import { urlFor } from "../sanity";
 
 type Props = {
   pageInfo: PageInfo;
