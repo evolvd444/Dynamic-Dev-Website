@@ -21,7 +21,7 @@ const About = ({ pageInfo }: Props) => {
       whileInView={{ opacity: 1 }}
       className="flex flex-col sm:w-[90vw] sm:h-[900px] relative text-center h-screen md:mt-[0px] md:h-[80vh] md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 sm:top-20 sm: sm:ml-4 md:top-0 lg:top-[100px] uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md-[10px_30v px_35px_#15c3f3f1] lg:top-10 z-20">
+      <h3 className="absolute top-24 sm:top-20 sm: sm:ml-4 md:top-0 lg:top-[100px] uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md-[10px_30v px_35px_#15c3f3f1] lg:top-9 z-20">
         {" "}
         About{" "}
       </h3>
