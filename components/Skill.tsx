@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import JS from "../public/javascript-cool.svg";
 import { Skill } from "../typings";
-import { urlFor } from "../sanity/sanity";
+import { urlFor } from "../lib/sanity";
 type Props = {
   skill: Skill;
   directionLeft?: boolean;
@@ -18,12 +18,12 @@ const Skill = ({ skill, directionLeft}: Props) => {
         src={urlFor(skill?.image).url()}
         alt="image of skill"
         initial={{
-          x: directionLeft ? -60 : 100,
+          x: directionLeft ? -80 : 100,
           opacity: 0,
         }}
         transition={{ duration: 1 }}
         whileInView={{ opacity: 1, x: 0 }}
-        className="rounded-full border border-gray-500 object-contain sm:w-[70px] sm:h-[70px] md:w-28 md:h-28 lg:w-32 lg:h-32 filter group-hover:grayscale transition duration-300 ease-in-out "
+        className="rounded-full border border-gray-500 object-cover sm:w-[70px] sm:h-[70px] md:w-28 md:h-28 lg:w-32 lg:h-32 filter group-hover:grayscale transition duration-300 ease-in-out "
       />
       {/* <motion.div  className="absolute grid grid-cols-4 gap-0 sm:gap-3 sm:p-5 lg:ml-[68px] sm:-ml-[10px] sm:w-screen -mt-[17px] -z-10">
       <div className=" rounded-full sm:w-[74px] sm:h-[74px] sm:ml-1 md:w-28 md:h-28 w-24 h-24 lg:mt-4 lg:-ml-[11.7vw] lg:w-32 lg:h-32 object-contain ring-4 ring-indigo-400/30 animate-pulse -z-0" />

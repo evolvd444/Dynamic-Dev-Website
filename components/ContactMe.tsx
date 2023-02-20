@@ -1,8 +1,13 @@
-import React from 'react'
-import {PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
+import { PageInfo } from "../typings";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo;
+  };
+  
 type Inputs = {
     name: string,
     email: string,
@@ -10,14 +15,20 @@ type Inputs = {
     message: string,
   };
   
-const ContactMe = (props: Props) => {
+const ContactMe = ({ pageInfo }: Props) => {
 
-    const { register, handleSubmit,} = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = (formData) => {window.location.href = `mailto:omar@thedynamic.dev?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`};
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+      } = useForm<Inputs>();
+      const onSubmit: SubmitHandler<Inputs> = (data) => {
+        window.location.href = `mailto:${pageInfo.email}?subject=${data.subject}&body=Hi, my name is ${data.name}. ${data.message}`;
+      };
 
   return (
-    <div className= " h-screen flex sm:px-10 relative sm:flex-col flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-     <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] top-20">Contact</h3>
+    <motion.div className= " h-screen flex sm:px-10 relative sm:flex-col flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
+     <h3 className="absolute top-10 uppercase tracking-[20px] text-gray-500 text-2xl drop-shadow-md ">Contact</h3>
         <div className="flex flex-col space-y-10 sm:mt-10 sm:space-y-9 sm:mb-2">
         <h4 className=" text-4xl font-semibold text-center ">Like what you see?{" "}
         <span className= "decoration-[#34f5d5]/50 underline animate-pulse"> Lets Talk. </span>
@@ -53,7 +64,7 @@ const ContactMe = (props: Props) => {
             <button type="submit" className="bg-teal-400/60 py-5 px-10 rounded-md text-white font-bold text-lg">Submit</button>
         </form>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

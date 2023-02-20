@@ -5,7 +5,7 @@ import Img from 'next/image'
 import Link from 'next/link'
 import ProfileImage from '../public/199C99F5-5514-4967-93ED-175312928B64.png'
 import {PageInfo} from '../typings' 
-import {  urlFor } from '../sanity/sanity'
+import {  urlFor } from '../lib/sanity'
 
 
 type Props = {
