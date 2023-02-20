@@ -6,6 +6,7 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
+import DynamicLogo from "public/FAACD828-E87A-4C20-99C8-2A9D0A22521D.png"
 import { Experience, PageInfo, Project, Skill, Social } from "../typings";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
@@ -13,6 +14,7 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocial } from "../utils/fetchSocials";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -58,11 +60,13 @@ const Home = ({ projects, skills, pageInfo, experiences, socials }: Props) => {
       </section>
 
       <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex items-center justify-center">
-            <img
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src="https://i.imgur.com/e2yvD6A.png"
+        <footer className="sticky -bottom-3 h-[20%] w-[100%] cursor-pointer">
+          <div className="flex  items-center justify-center">
+            <Image
+              className=" flex items-center justify-center filter grayscale hover:grayscale-0 cursor-pointer"
+              src={DynamicLogo}
+              height="150px"
+              width="350px"
               alt=""
             />
           </div>
