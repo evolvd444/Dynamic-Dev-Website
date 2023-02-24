@@ -85,7 +85,7 @@ function Projects({projects}: Props) {
                         />
                     ))}
                 </div>
-                <p className="text-lg text-center h-32 bg-gray-700/20 overflow-y-scroll  scrollbar-track-gray-400/20 scrollbar-thumb-indigo-400  px-5 md:text-left sm:h-48 sm:pb-20 ">
+                <p className="text-lg  flex flex-col shadow-proj shadow-teal-600/70  text-center h-32 bg-gray-700/30 overflow-y-scroll overflow-hidden scrollbar-track-gray-400/20 scrollbar-thumb-indigo-400  px-5 md:text-left sm:h-48 sm:pb-20 ">
                   {project.summary}
                   {/* The Fullcourt App is the first of its kind. It aims to solve
                   the issues of the pick-up basketball scene. Often it can be
@@ -106,7 +106,7 @@ function Projects({projects}: Props) {
              </motion.div>
                   ))}
         </div>
-            <div className="w-full absolute top-[30%] bg-[#30f1e1fa]/10 left-0 h-[500px] -skew-y-12" />
+            <div className="w-full absolute top-[30%] bg-[#eb64f782]/10 left-0 h-[500px] -skew-y-12" />
         
        </motion.div>
        
