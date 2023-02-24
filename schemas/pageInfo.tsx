@@ -58,17 +58,7 @@ export default defineType({
       type: 'array',
       of:[{ type:"reference", to: {type:"social"}}]
     }),
-    defineField({
-      type: 'slug',
-      name: 'slug',
-      title: 'Slug',
-      options: {
-        source: 'title',
-      },
-      validation: (rule) => rule.required(),
-    }),
-    
-    
+   
   ],
   
 

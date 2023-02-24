@@ -13,7 +13,7 @@ type Props = {
 
 const ExperienceCard = ({ experience }: Props) => {
   return (
-    <article className=" flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 lg:w-[60vh] lg:h-[98vh] w-[400px] md:-mt-10 md:w-[50vw] xl:w-[600px] p-10 hover:opacity-100 opacity-40  snap-center cursor-pointer transition-opacity duration-200   sm:pl-0 sm:py-12 sm:pt-5 sm:px-0 sm:h-[105%] sm:w-screen sm:mt-0 mt-5 ">
+    <article className=" flex flex-col relative rounded-lg items-center space-y-7 flex-shrink-0 lg:w-[60vh] lg:h-[98vh] w-[400px] md:-mt-10 md:w-[50vw] xl:w-[600px] p-10 hover:opacity-100 opacity-40  snap-center cursor-pointer transition-opacity duration-200  sm:pt-0 sm:px-0 sm:h-[95%] sm:w-screen sm:mt-3 mt-5 ">
       <motion.div
         initial={{
           y: -100,
@@ -26,7 +26,7 @@ const ExperienceCard = ({ experience }: Props) => {
         viewport={{
           once: true,
         }}
-        className="relative mt-20 w-35 h-35 px-10 lg:pt-7 lg:pb-7 lg:h-[100vh] max-w-[560px] max-h-[710px] lg:overflow-y-hidden overflow-y-scroll pt-12 pb-12 mb-20 lg:w-[55vh] md:w-[50vw] xl:w-[600px] bg-gradient-to-r from-[rgb(13,3,35)]  to-[rgba(45,187,137,0.15)] cursor-pointer sm:w-[88%] sm:h-[900px] sm:mb-12 sm:pt-7 sm:pb-5 sm:mt-12 sm:p-5"
+        className="relative mt-20 w-35 h-35 px-10 lg:pt-7 lg:pb-7 lg:h-[100vh] max-w-[560px] max-h-[710px] lg:overflow-y-hidden overflow-y-scroll pt-12 pb-12 mb-20 lg:w-[55vh] md:w-[50vw] xl:w-[600px] bg-gradient-to-r from-[rgb(13,3,35)]  to-[rgba(45,187,137,0.15)] cursor-pointer sm:w-[88%] sm:h-[900px] sm:mb-5 sm:pt-7 sm:pb-0 sm:mt-20 sm:p-5"
       >
         <div className=" absolute overflow-x-hidden sm:ml-[111px]  content-center sm:mt-[1px] w-35 h-35 ml-[19.1vh] sm:w-[78px] sm:h-[78px] mb-7 h-[79px] w-[79px] xl:w-[150px] xl:h-[150px]  cursor-pointer rounded-full ring-4 ring-white/40 animate-pulse z-0" />
         <motion.img
@@ -45,7 +45,7 @@ const ExperienceCard = ({ experience }: Props) => {
             {experience.company}{" "}
             </p>
           </div>
-          <div className="flex justify-self-center object-center space-x-2 my-2">
+          <div className="grid grid-cols-7 grid-rows-3 overflow-none  object-center space-x-2 my-2">
             {experience?.technologies?.map((technology) => (
               <motion.img
                 key={technology._id}
@@ -55,6 +55,7 @@ const ExperienceCard = ({ experience }: Props) => {
               />
             ))}
           </div>
+         
           <p className=" uppercase py-5 text-gray-300 ">
              {new Date(experience.dateStarted).toDateString()} -{" "} 
              {experience.isCurrentlyWorkingHere 
@@ -62,14 +63,16 @@ const ExperienceCard = ({ experience }: Props) => {
                 : new Date(experience.dateEnded).toDateString()}
                 </p>
 
-          <ul className="list-disc space-y-4 ml-5 text-lg overflow-y-scroll scrollbar-thin scrollbar-thumb-indigo-500/80 ">
+          <ul className="list-disc space-y-4 ml-5 text-lg overflow-y-scroll scrollbar-thin scrollbar-thumb-indigo-900/90 ">
             {experience.points.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
           </ul>
         </div>
       </motion.div>
+      <div className=" bg-blue-400/30 ring-1 ring-fuchsia-500/80 z-0 absolute -bottom-9 animate-pulse h-4 w-[100vw]"/>
     </article>
+    
   );
 };
 

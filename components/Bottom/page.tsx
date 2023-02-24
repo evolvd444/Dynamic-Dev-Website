@@ -7,10 +7,10 @@ import React from "react";
 
 const Bottom = () => {
   return (
-    <div className=" sticky -bottom-7 sm:-bottom-3 cursor-pointer">
+    <div className=" sticky -bottom-0 sm:-bottom-3 cursor-pointer">
       <Link href="#hero">
         <div >
-          <footer className="flex items-center justify-center ">
+          <div className="flex items-center justify-center ">
             <Image
               className=" filter grayscale  sticky bottom-3 hover:grayscale-0 cursor-pointer"
               src={Logo}
@@ -18,26 +18,10 @@ const Bottom = () => {
               width={300}
               alt=""
             />
-          </footer>
+          </div>
         </div>
       </Link>
-      <h6 className="flex bg-black snap-center justify-bottom object-center">
-        <a
-          href="https://iconscout.com/icons/typescript"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Typescript Icon
-        </a>{" "}
-        by{" "}
-        <a
-          href="https://iconscout.com/contributors/icon-54"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Icon 54
-        </a>
-      </h6>
+  
     </div>
   );
 };

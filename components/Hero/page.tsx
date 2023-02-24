@@ -9,7 +9,7 @@ import  {urlFor}  from '../../lib/urlFor'
 import ProfileImage from '../../public/199C99F5-5514-4967-93ED-175312928B64.png'
 import {PageInfo} from '../../types' 
 import BackgroundCircles from "../BackgroundCircles/page"
-
+import Bottom from "../Bottom/page"
 
 type Props = {
   pageInfo: PageInfo
@@ -73,8 +73,9 @@ const HomePage = ({pageInfo}: Props) => {
             
             
         </div>
-
+       
        </div>
+       
     </div>
   )
 }

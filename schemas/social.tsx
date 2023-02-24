@@ -18,16 +18,7 @@ export default defineType({
       type: 'url',
 
     }),
-    defineField({
-      type: 'slug',
-      name: 'slug',
-      title: 'Slug',
-      options: {
-        source: 'title',
-      },
-      validation: (rule) => rule.required(),
-    }),
-    
+ 
   ],
 
 })
