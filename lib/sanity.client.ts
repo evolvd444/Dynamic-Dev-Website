@@ -128,8 +128,8 @@ export const sanityClient = (token?: string) => {
     
     const pageInfo = await sanityClient(token)?.fetch(pageInfoQuery)
 
-    const pageInfoJson = JSON.stringify(pageInfo)
-      console.log(pageInfo ,"this is just the PAGE Info---->" + pageInfoJson)
+    // const pageInfoJson = JSON.stringify(pageInfo)
+    //   console.log(pageInfo ,"this is just the PAGE Info---->" + pageInfoJson)
     return  pageInfo
   }
   
@@ -139,8 +139,8 @@ export const sanityClient = (token?: string) => {
     token?: string
   }): Promise<Experience[] | undefined> {
     const experience = await sanityClient(token)?.fetch(experienceQuery)
-    const experienceJson = JSON.stringify(experience)
-      console.log(experience ,"this is just the EXPERIENCE Info---->" + experienceJson)
+    // const experienceJson = JSON.stringify(experience)
+    //   console.log(experience ,"this is just the EXPERIENCE Info---->" + experienceJson)
     return experience
   }
   
@@ -150,8 +150,8 @@ export const sanityClient = (token?: string) => {
     token?: string
   }): Promise<Skill[] | undefined> {
     const skills = await sanityClient(token)?.fetch(skillsQuery)
-    const skillsJson = JSON.stringify(skills)
-    console.log(skills ,"this is just the SKILLS Info---->" + skillsJson)
+    // const skillsJson = JSON.stringify(skills)
+    // console.log(skills ,"this is just the SKILLS Info---->" + skillsJson)
     return skills
   }
   
@@ -162,8 +162,8 @@ export const sanityClient = (token?: string) => {
   }): Promise<Project[] | undefined> {
 
     const projects = await sanityClient(token)?.fetch(projectQuery)
-    const projectsJson = JSON.stringify(projects)
-      console.log(projects ,"this is just the PROJECTS Info---->" + projectsJson)
+    // const projectsJson = JSON.stringify(projects)
+    //   console.log(projects ,"this is just the PROJECTS Info---->" + projectsJson)
     return projects
   }
   
@@ -174,8 +174,8 @@ export const sanityClient = (token?: string) => {
   }): Promise<Social[] | undefined> {
     
     const socials = await sanityClient(token)?.fetch(socialsQuery)
-    const socialsJson = JSON.stringify(socials)
-    console.log(socials ,"this is just the SOCIALS Info---->" + socialsJson)
+    // const socialsJson = JSON.stringify(socials)
+    // console.log(socials ,"this is just the SOCIALS Info---->" + socialsJson)
     return socials
   }
 

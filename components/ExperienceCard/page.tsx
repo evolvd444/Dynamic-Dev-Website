@@ -1,13 +1,11 @@
 "use client"
-import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import TSLogo from "../public/tsTransparent.png";
-import TypeLogo from "../public/typescript.svg";
-import JSLogo from "../public/transparent-javascript-logo.png";
-import { Experience } from "../../types";
+import Image from "next/image";
+import React from "react";
 
 import  {urlFor}  from '../../lib/urlFor'
+import { Experience } from "../../types";
+
 
 type Props = {
   experience: Experience;

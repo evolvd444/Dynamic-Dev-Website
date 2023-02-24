@@ -1,9 +1,8 @@
 
 import { GetStaticProps } from "next";
-import Link from "next/link";
-import DynamicLogo from "public/FAACD828-E87A-4C20-99C8-2A9D0A22521D.png"
-import Bottom from '../components/Bottom/page'
+
 import About from "../components/About/page";
+import Bottom from '../components/Bottom/page'
 import ContactMe from "../components/ContactMe/page";
 import Header from "../components/Header/page";
 import Hero from "../components/Hero/page";
