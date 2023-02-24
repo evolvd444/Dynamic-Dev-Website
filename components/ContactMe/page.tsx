@@ -1,10 +1,12 @@
 
-"use client"
-import React from 'react'
-import {PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid"
-import { useForm, SubmitHandler } from "react-hook-form";
 
-type Props = {}
+import {EnvelopeIcon,MapPinIcon, PhoneIcon } from "@heroicons/react/24/solid"
+import React from 'react'
+import { SubmitHandler,useForm } from "react-hook-form";
+import { PageInfo } from 'types';
+type Props = {
+  pageInfo: PageInfo
+}
 type Inputs = {
     name: string,
     email: string,
@@ -12,15 +14,15 @@ type Inputs = {
     message: string,
   };
   
-const ContactMe = (props: Props) => {
+const ContactMe = ({pageInfo}: Props) => {
 
     const { register, handleSubmit,} = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = (formData) => {window.location.href = `mailto:omar@thedynamic.dev?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`};
 
   return (
     <div className= " h-screen flex sm:px-10 relative sm:flex-col flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-     <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] top-20">Contact</h3>
-        <div className="flex flex-col space-y-10 sm:mt-10 sm:space-y-9 sm:mb-2">
+     <h3 className="absolute uppercase sm:top[0] tracking-[20px] text-gray-500 text-2xl  top-[11%]">Contact</h3>
+        <div className="flex flex-col -mb-[7%] space-y-10 sm:mt-10 sm:space-y-9 sm:mb-2">
         <h4 className=" text-4xl font-semibold text-center ">Like what you see?{" "}
         <span className= "decoration-[#34f5d5]/50 underline animate-pulse"> Lets Talk. </span>
         </h4>
@@ -37,7 +39,7 @@ const ContactMe = (props: Props) => {
             </div> */}
             <div className= "flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="h-6 w-6 text-purple-500 animate-pulse " />
-            <p className="text-2xl"> omar@thedynamic.dev </p>
+            <p className="text-2xl"> {pageInfo?.email} </p>
 
             </div>
         </div>

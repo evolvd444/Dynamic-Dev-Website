@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import TSLogo from "../public/tsTransparent.png";
 import TypeLogo from "../public/typescript.svg";
 import JSLogo from "../public/transparent-javascript-logo.png";
-import { Experience } from "../../typings";
-import { urlFor } from "../../sanity";
+import { Experience } from "../../types";
+
+import  {urlFor}  from '../../lib/urlFor'
 
 type Props = {
   experience: Experience;
@@ -29,11 +30,11 @@ const ExperienceCard = ({ experience }: Props) => {
         }}
         className="relative mt-20 w-35 h-35 px-10 lg:pt-7 lg:pb-7 lg:h-[100vh] max-w-[560px] max-h-[710px] lg:overflow-y-hidden overflow-y-scroll pt-12 pb-12 mb-20 lg:w-[55vh] md:w-[50vw] xl:w-[600px] bg-gradient-to-r from-[rgb(13,3,35)]  to-[rgba(45,187,137,0.15)] cursor-pointer sm:w-[88%] sm:h-[900px] sm:mb-12 sm:pt-7 sm:pb-5 sm:mt-12 sm:p-5"
       >
-        <div className=" absolute overflow-x-hidden sm:ml-[13.9vh]  content-center sm:mt-[1px] w-35 h-35 ml-[19.1vh] sm:w-[78px] sm:h-[78px] mb-7 h-[79px] w-[79px] xl:w-[150px] xl:h-[150px]  cursor-pointer rounded-full ring-4 ring-white/40 animate-pulse z-0" />
+        <div className=" absolute overflow-x-hidden sm:ml-[111px]  content-center sm:mt-[1px] w-35 h-35 ml-[19.1vh] sm:w-[78px] sm:h-[78px] mb-7 h-[79px] w-[79px] xl:w-[150px] xl:h-[150px]  cursor-pointer rounded-full ring-4 ring-white/40 animate-pulse z-0" />
         <motion.img
           src={urlFor(experience?.companyImage).url()}
           alt=" "
-          className="ml-[19vh] opacity-100 mb-[25px] sm:ml-[13.8vh] sm:shadow-lg sm:shadow-purple-400/90 object-center object-cover container h-[80px] w-[80px] z-30 rounded-full"
+          className="ml-[19vh] opacity-100 mb-[25px] sm:ml-[110px] sm:shadow-lg sm:shadow-purple-400/90 object-center object-cover container h-[80px] w-[80px] z-30 rounded-full"
         />
 
         <div className="px-0 sm:py-0 md:px-10">

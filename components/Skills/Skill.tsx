@@ -1,10 +1,11 @@
 "use client"
-import React from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import JS from "../public/javascript-cool.svg";
-import { Skill } from "../../typings";
-import { urlFor } from "../../sanity";
+import React from "react";
+
+import { urlFor } from "../../lib/urlFor";
+import { Skill } from "../../types";
+
+
 type Props = {
   skill: Skill;
   directionLeft?: boolean;

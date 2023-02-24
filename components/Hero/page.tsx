@@ -1,13 +1,14 @@
-"use client"
+
+
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import {Cursor, useTypewriter} from 'react-simple-typewriter'
-import BackgroundCircles from "../BackgroundCircles"
-import Img from 'next/image'
-import Link from 'next/link'
-import ProfileImage from '../public/199C99F5-5514-4967-93ED-175312928B64.png'
-import {PageInfo} from '../../typings' 
-import  {urlFor}  from '../../sanity'
-import Image from 'next/image'
+
+import  {urlFor}  from '../../lib/urlFor'
+import ProfileImage from '../../public/199C99F5-5514-4967-93ED-175312928B64.png'
+import {PageInfo} from '../../types' 
+import BackgroundCircles from "../BackgroundCircles/page"
 
 
 type Props = {
@@ -15,7 +16,7 @@ type Props = {
 
 }
 
-const Hero = ({pageInfo}: Props) => {
+const HomePage = ({pageInfo}: Props) => {
 
     const [text,count] = useTypewriter({
         words: [
@@ -35,7 +36,8 @@ const Hero = ({pageInfo}: Props) => {
 
         <Image
 
-          src= {urlFor(pageInfo?.heroImage).url()}
+          src= {ProfileImage}
+        
           alt= "image of Omar"
           width={200}
           height={200}
@@ -77,4 +79,4 @@ const Hero = ({pageInfo}: Props) => {
   )
 }
 
-export default Hero
+export default HomePage

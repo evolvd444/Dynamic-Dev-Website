@@ -1,7 +1,7 @@
-//@ts-expect-error
+
 import {defineField, defineType} from 'sanity'
 
-export const experience = defineType({
+export default defineType({
   name: 'experience',
   title: 'Experience',
   type: 'document',
@@ -57,6 +57,15 @@ export const experience = defineType({
       title: 'Points',
       type: 'array',
       of:[{ type:"string"}]
+    }),
+    defineField({
+      type: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      options: {
+        source: 'title',
+      },
+      validation: (rule) => rule.required(),
     }),
   ],
 

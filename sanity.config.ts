@@ -1,78 +1,34 @@
+import { visionTool } from "@sanity/vision";
+import { defineConfig } from "sanity";
+import { deskTool } from "sanity/desk";
+import {media} from "sanity-plugin-media"
 
-//import {googleMapsInput} from '@sanity/google-maps-input'
-import schemaTypes from './schemas/schema'
-import {muxInput} from 'sanity-plugin-mux-input'
-import {media} from 'sanity-plugin-media'
-/**
- * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
- */
+import { schemaTypes } from "./schemas";
 
-import { visionTool } from '@sanity/vision'
-import { apiVersion, dataset, previewSecretId, projectId } from './lib/sanity.api'
-import { previewDocumentNode } from './plugins/previewPane'
-import { productionUrl } from './plugins/productionUrl'
-import { pageStructure, singletonPlugin } from 'plugins/settings'
-import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
-// import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
-// import page from 'schemas/documents/page'
-// import project from 'schemas/documents/project'
-// import duration from 'schemas/objects/duration'
-// import milestone from 'schemas/objects/milestone'
-// import timeline from 'schemas/objects/timeline'
-// import home from 'schemas/singletons/home'
-// import settings from 'schemas/singletons/settings'
 
-// const title =
-//   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-//   'Next.js Personal Website with Sanity.io'
-
-// export const PREVIEWABLE_DOCUMENT_TYPES: string[] = [
-//   home.name,
-//   page.name,
-//   project.name,
-// ]
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 export default defineConfig({
-  basePath: '/studio',
-  projectId: projectId || '',
-  dataset: dataset || '',
-  title,
-  schema: {
-    // If you want more content types, you can add them to this array
-    // types: [
-    //   // Singletons
-    //   home,
-    //   settings,
-    //   // Documents
-    //   duration,
-    //   page,
-    //   project,
-    //   // Objects
-    //   milestone,
-    //   timeline,
-    // ],
-  },
+  basePath: "/studio", // <-- important that `basePath` matches the route you're mounting your studio from, it applies to both `/pages` and `/app`
+
+  projectId,
+  dataset,
+
   plugins: [
-    deskTool({
-      // structure: pageStructure([home, settings]),
-      // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
-      defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
-    }),
-    // Configures the global "new document" button, and document actions, to suit the Settings document singleton
-    // singletonPlugin([home.name, settings.name]),
-    // Add the "Open preview" action
-    productionUrl({
-      apiVersion,
-      previewSecretId,
-      // types: PREVIEWABLE_DOCUMENT_TYPES,
-    }),
-    // Add an image asset source for Unsplash
-    // unsplashImageAsset(),
-    // Vision lets you query your content with GROQ in the studio
-    // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({ defaultApiVersion: apiVersion }),
-    muxInput({mp4_support: 'standard'}), media(),
+    deskTool(),
+    visionTool(),
   ],
 
-})
+  schema: {
+    types: schemaTypes,
+  },
+  title: "DynamicDev Content Studio",
+  name: "DynamicDev_Content_Studio",
+
+  
+});
+
+
+import {muxInput} from 'sanity-plugin-mux-input'
+muxInput({mp4_support: 'standard'}), media()

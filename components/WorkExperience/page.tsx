@@ -2,7 +2,7 @@
 import React from 'react'
 import ExperienceCard from '../ExperienceCard/page'
 import {motion} from 'framer-motion'
-import { Experience } from '../../typings'
+import { Experience } from '../../types'
 type Props = {
   experiences: Experience[]
 }

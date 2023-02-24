@@ -1,10 +1,11 @@
-//@ts-expect-error
+import {DocumentIcon, ImageIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
-export const project = defineType({
+export default defineType({
   name: 'project',
   title: 'Project',
   type: 'document',
+  icon: DocumentIcon,
   fields: [
     defineField({
       name: 'title',
@@ -13,19 +14,15 @@ export const project = defineType({
       type: 'string',
     }),
     defineField({
-      title: 'Video Title',
-      name: 'videoTitle', 
-      description: 'Title of MuxVideo',
-      type: 'string'
+      name: 'promoVideo',
+      title: 'PromoVideo',
+      type: 'url',
+     
     }),
 
-      defineField({
-      title: 'Video',
-      name: 'video',
-      type: 'mux.video',
-    }),
     defineField({
       name: 'image',
+      icon: ImageIcon,
       title: 'Image',
       type: 'image',
       options: {

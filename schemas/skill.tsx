@@ -1,7 +1,7 @@
-//@ts-expect-error
+
 import {defineField, defineType} from 'sanity'
 
-export const skill = defineType({
+export default defineType({
   name: 'skill',
   title: 'Skill',
   type: 'document',
@@ -29,6 +29,15 @@ export const skill = defineType({
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      type: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      options: {
+        source: 'title',
+      },
+      validation: (rule) => rule.required(),
     }),
 
    

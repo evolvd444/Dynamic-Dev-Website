@@ -1,7 +1,7 @@
-//@ts-expect-error
+
 import {defineField, defineType} from 'sanity'
 
-export const pageInfo = defineType({
+export default defineType({
   name: 'pageInfo',
   title: 'PageInfo',
   type: 'document',
@@ -58,7 +58,19 @@ export const pageInfo = defineType({
       type: 'array',
       of:[{ type:"reference", to: {type:"social"}}]
     }),
+    defineField({
+      type: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      options: {
+        source: 'title',
+      },
+      validation: (rule) => rule.required(),
+    }),
+    
+    
   ],
+  
 
  
 })

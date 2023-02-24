@@ -1,26 +1,16 @@
-"use client"
-import React from 'react'
-import {SocialIcon} from "react-social-icons"
 import {motion} from "framer-motion"
 import Link from 'next/link'
-import { Social } from '../typings'
+import React from 'react'
+import {SocialIcon} from "react-social-icons"
+
+import { Social } from '../../types'
 type Props = {
     socials: Social[]
 };
 
-// type PageProps = {
-//     params:{
-//         socials: Social[];
-//     }
-// }
-
-
-
-
-async function Head({ socials }: Props) {
-    
+function Header({ socials }: Props) {
   return (
-    <header className= "sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center ">
+    <div className= "sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center ">
         <motion.div 
         initial={{
             x: -500,
@@ -39,7 +29,7 @@ async function Head({ socials }: Props) {
             {/* Social Icons*/}
             {socials?.map((social) => (
             <SocialIcon
-            key={social._id}
+                key={social._id}
                 url={social.url}
                 fgColor="gray"
                 bgColor='transparent'
@@ -75,7 +65,7 @@ async function Head({ socials }: Props) {
             }}
             className= "flex flex-row items-center text-gray-300 cursor-pointer">
 
-            <SocialIcon url= "https://www.youtube.com/@thedynamicdev" 
+                <SocialIcon url= "https://www.youtube.com/@thedynamicdev" 
             className= "cursor-pointer"
             network="email"
             fgColor="gray" 
@@ -85,9 +75,8 @@ async function Head({ socials }: Props) {
             </motion.div>
             </Link>
 
-    </header>
+    </div>
   )
 }
 
-export default Head
-
+export default Header

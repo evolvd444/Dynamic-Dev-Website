@@ -1,21 +1,21 @@
-import React from "react";
 import Image from "next/image"
 import Link from "next/link"
-import Logo from "../../public/A2EF22D9-F376-4A90-89BE-85B4C8F4.png"
+import Logo from "public/FAACD828-E87A-4C20-99C8-2A9D0A22521D.png"
+import React from "react";
 
 
 
-const Footer = () => {
+const Bottom = () => {
   return (
-    <div>
+    <div className=" sticky -bottom-7 sm:-bottom-3 cursor-pointer">
       <Link href="#hero">
-        <div className=" sticky bottom-3 sm:-bottom-3 cursor-pointer">
+        <div >
           <footer className="flex items-center justify-center ">
             <Image
-              className="  rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+              className=" filter grayscale  sticky bottom-3 hover:grayscale-0 cursor-pointer"
               src={Logo}
-              height={222}
-              width={444}
+              height={160}
+              width={300}
               alt=""
             />
           </footer>
@@ -42,4 +42,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Bottom;

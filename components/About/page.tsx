@@ -1,10 +1,10 @@
-"use client"
-import React from "react";
-import { motion } from "framer-motion";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { PageInfo } from "../../typings";
-import { urlFor } from "../../sanity";
+import * as React from 'react'
+
+import  {urlFor}  from '../../lib/urlFor'
+import { PageInfo } from "../../types";
 
 type Props = {
   pageInfo: PageInfo;
@@ -22,7 +22,7 @@ const About = ({ pageInfo }: Props) => {
       whileInView={{ opacity: 1 }}
       className="flex flex-col sm:w-[90vw] sm:h-[900px] relative text-center h-screen md:mt-[0px] md:h-[80vh] md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 sm:top-20 sm: sm:ml-4 md:top-0 lg:top-[100px] uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] z-20">
+      <h3 className="absolute top-24 sm:top-[12.5%] sm: sm:ml-4 md:top-0 lg:top-[7%] uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] z-20">
         {" "}
         About{" "}
       </h3>
@@ -46,7 +46,7 @@ const About = ({ pageInfo }: Props) => {
           <div className="relative  md:absolute mt-40 sm:mt-[271px]  rounded ring-4 lg:rounded object-center ring-purple-700 sm:ring-blue-500/40  lg:ring-teal-500/70 animate-pulse lg:w-[260px] lg:h-[260px] lg:ring-8 lg:absolute lg:mt-[19.6vh] lg:-z-50 lg:ml-[5px] sm:w-[100vw] sm:-ml-[40px] sm:animate-pulse sm:h-[100px]  md:w-[340px]  md:ring-teal-400/60 md:rounded md:mt-[5px] md:z-0 md:ml-1 md:ring-8 md:h-[300px]  xl:w-[27vw] xl:h-[50vh] xl:ml-0 xl:z-50 xl:mt-40  -z-10" />
 
           <Image
-            src={urlFor(pageInfo?.profilePic).url()}
+            src={urlFor(pageInfo.profilePic).url()}
             alt="image of Omar"
             width={200}
             height={200}

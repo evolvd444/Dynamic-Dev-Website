@@ -1,4 +1,4 @@
-import { Project } from "../typings";
+import { Project } from "../types";
 
 export const fetchProjects = async () => {
   const res = await fetch(

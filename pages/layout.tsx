@@ -1,8 +1,11 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
+import Bottom from 'components/Bottom/page'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+export default function Layout({ children }) {
+  return (
+    <>
+
+      <main>{children}</main>
+      <Bottom />
+    </>
+  )
 }
-
-export default MyApp;

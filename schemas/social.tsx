@@ -1,7 +1,7 @@
-//@ts-expect-error
+
 import {defineField, defineType} from 'sanity'
 
-export const social = defineType({
+export default defineType({
   name: 'social',
   title: 'Social',
   type: 'document',
@@ -17,6 +17,15 @@ export const social = defineType({
       title: 'Url',
       type: 'url',
 
+    }),
+    defineField({
+      type: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      options: {
+        source: 'title',
+      },
+      validation: (rule) => rule.required(),
     }),
     
   ],
