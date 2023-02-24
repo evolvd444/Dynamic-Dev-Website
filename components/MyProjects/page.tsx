@@ -44,7 +44,7 @@ function Projects({projects}: Props) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2 }}
                 viewport={{ once: true }}
-                className=" object-center shadow-proj shadow-purple-400/50  -z-10 md:w-[80vw] md:h-[40vh] md:mt-12vh sm:h-[53vw] sm:w-[92vw] sm:mt-20  sm:mr-3  mt-0 justify-center items-center mb-10 flex lg:mt-[0px] lg:w-[47vw] lg:h-[47vh] xl:mt-10 xl:h-[40vh] xl:w-[40vw]"
+                className=" object-center shadow-proj shadow-purple-400/50  -z-10 md:w-[80vw] md:h-[40vh] md:mt-12vh sm:h-[53vw] sm:w-[92vw] sm:mt-12  sm:mr-3  mt-0 justify-center items-center mb-10 flex lg:mt-[0px] lg:w-[47vw] lg:h-[47vh] xl:mt-10 xl:h-[40vh] xl:w-[40vw]"
           >
               
            
@@ -63,7 +63,7 @@ function Projects({projects}: Props) {
           </motion.div>
           </Link>
           
-              <div className="space-y-5 xl:pb-20  px-0 md:px-10 sm:px-1 max-w-6xl sm:-mt-10 sm:h-[300px] lg:mt-10 lg:-mb-12 z-30">
+              <div className="space-y-5 xl:pb-20  px-0 md:px-10 sm:px-1 max-w-6xl sm-z-40 sm:-mt-10 sm:h-[300px] lg:mt-10 lg:-mb-12 z-30">
                 <h4 className="text-4xl font-semibold text-center">
                   <span className=" underline decoration-[#34f5d5]/70">
                     {" "}
