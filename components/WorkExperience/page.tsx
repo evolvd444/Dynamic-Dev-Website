@@ -1,4 +1,5 @@
-"use client"
+
+import {ChevronRightIcon } from "@heroicons/react/24/outline"
 import {motion} from 'framer-motion'
 import React from 'react'
 
@@ -23,12 +24,16 @@ function WorkExperience({experiences}: Props) {
       once:true
   }}
     
-    className="h-screen flex sm:p-3  sm:-mb-[23.5%] sm:-ml-5 relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute z-30 uppercase md:-mt-[82vh] lg:-mt-[82vh] tracking-[20px] text-gray-500 text-2xl sm:ml-[14%] sm:-m-[0%] sm:top-20"> Experience</h3>
+    className="h-screen flex sm:-ml-3 sm:-mb-[23.5%] lg:py-5 relative overflow-hidden flex-col text-left md:flex-row max-w-full px-0 justify-evenly mx-auto items-center">
+     
+     <h3 className="absolute z-30 uppercase md:-mt-[75vh] lg:-mt-[75vh] tracking-[20px] text-gray-500 text-2xl sm:ml-[10%] sm:-m-[0%] sm:top-20"> Experience</h3>
+    
+      <ChevronRightIcon className="h-10 w-10 z-40 absolute ml-[90vw] text-blue-400/20 animate-ping"/>
     <div className="w-full sm:pt-10 flex sm:-mb-[11px] sm:ml-7 space-x-5 lg:space-x-15 overflow-y-hidden overflow-x-scroll snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-purple-700">
     {experiences?.map(experience => (
     <ExperienceCard key={experience._id} experience={experience}/>
     ))}
+    
    
 
     </div>

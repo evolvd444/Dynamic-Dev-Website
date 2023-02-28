@@ -14,8 +14,7 @@ export const experienceQuery = groq`
 export const projectQuery = groq`
 *[_type == "project"] {
     ...,
-    technologies[]->, ...
-       video.asset->
+    technologies[]->
 } 
 `
 export const skillsQuery = groq`

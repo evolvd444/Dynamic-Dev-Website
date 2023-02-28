@@ -29,7 +29,7 @@ const Home = ({ projects, skills, pageInfo, experiences, socials}: Props) => {
       {/* Hero Banner Section */}
       <section id="hero" className="snap-start">
         <Hero pageInfo={pageInfo} />
-        <Bottom/>
+        <Bottom />
       </section>
 
       {/* About Section */}
@@ -72,6 +72,7 @@ const Home = ({ projects, skills, pageInfo, experiences, socials}: Props) => {
 
 export default Home;
 
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo: PageInfo = await getPageInfo({token});
   const experiences: Experience[] = await getExperience({token});
@@ -89,8 +90,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
-    // - At most once every 10 seconds
-    revalidate: 10,
+    // - At most once every 30 seconds
+    revalidate: 30,
   };
 };
 

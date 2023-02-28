@@ -29,7 +29,7 @@ const ContactMe = ({pageInfo}: Props) => {
         <div className= "flex justify-center pr-3.5 items-center flex-col space-y-10 sm:space-y-5">
             <div className= "flex items-center space-x-5 justify-center">
             <PhoneIcon className="h-6 w-6 text-blue-500 animate-pulse " />
-            <p className="text-2xl"> +1234567890 </p>
+            <p className="text-2xl"> {pageInfo?.phoneNumber} </p>
 
             </div>
             {/* <div className= "flex items-center space-x-5 justify-center">
@@ -54,7 +54,7 @@ const ContactMe = ({pageInfo}: Props) => {
             </div>
             <input {...register('subject')} placeholder="Subject" type="text" className= "contactInput "/>
             <textarea {...register('message')} placeholder="Message" className= "contactInput "/>
-            <button type="submit" className="bg-teal-400/60 py-5 px-10 rounded-md text-white font-bold text-lg">Submit</button>
+            <button type="submit" className="bg-teal-400/60 py-5 sm:py-3  px-10 rounded-md text-white font-bold text-lg">Submit</button>
         </form>
         </div>
     </div>

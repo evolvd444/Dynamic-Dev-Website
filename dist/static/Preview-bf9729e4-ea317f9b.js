@@ -1,0 +1,1 @@
+import{j as a,cY as n}from"./sanity-2e52752e.js";import{a as o,V as r}from"./VideoSource.styled-626b50aa-fa6138ca.js";const d=u=>{let{value:e}=u;const t=o(e==null?void 0:e.asset);if(t.value)return a(r,{asset:t.value,width:640});const{filename:l,playbackId:i,status:s}=e??{};return a(n,{title:l||i||"",subtitle:s?"status: ".concat(s):null})};export{d as default};

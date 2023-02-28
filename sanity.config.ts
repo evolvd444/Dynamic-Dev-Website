@@ -1,5 +1,5 @@
-
 import { visionTool } from "@sanity/vision";
+import { useCdn } from './lib/sanity.api';
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import {media} from "sanity-plugin-media"
@@ -7,15 +7,17 @@ import {media} from "sanity-plugin-media"
 import { schemaTypes } from "./schemas";
 
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION
+const projectId = "iuagzy0t";
+const dataset = "production";
+const apiVersion = '2021-10-21'
+
 export default defineConfig({
   basePath: "/studio", // <-- important that `basePath` matches the route you're mounting your studio from, it applies to both `/pages` and `/app`
 
   projectId,
   dataset,
   apiVersion,
+  useCdn,
   plugins: [
     deskTool(),
     visionTool(),
@@ -24,8 +26,8 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-  title: "DynamicDev Content Studio",
-  name: "DynamicDev_Content_Studio",
+  title: "dynamic-dev-website",
+  name: "dynamic-dev-website",
 
   
 });

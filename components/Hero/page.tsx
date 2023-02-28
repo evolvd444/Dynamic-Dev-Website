@@ -5,8 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import {Cursor, useTypewriter} from 'react-simple-typewriter'
 
-import  {urlFor}  from '../../lib/urlFor'
-import ProfileImage from '../../public/199C99F5-5514-4967-93ED-175312928B64.png'
+import  {urlFor}  from '../../lib/sanity.client'
 import {PageInfo} from '../../types' 
 import BackgroundCircles from "../BackgroundCircles/page"
 import Bottom from "../Bottom/page"
@@ -20,14 +19,15 @@ const HomePage = ({pageInfo}: Props) => {
 
     const [text,count] = useTypewriter({
         words: [
-            `{ name: ${pageInfo?.name} `,
-            " Software Developer who_Loves: ",
-            " Self Development,"
+            `= { name: ${pageInfo?.name}, `,
+            " loves: [ Self Development, ...",
+             "Programming, Business] };",
+            
             
            
         ],
         loop: true,
-        delaySpeed: 2000,
+        delaySpeed: 2500,
     });
 
   return (
@@ -36,14 +36,14 @@ const HomePage = ({pageInfo}: Props) => {
 
         <Image
 
-          src= {ProfileImage}
+          src= {urlFor(pageInfo?.heroImage)}
         
           alt= "image of Omar"
-          width={200}
-          height={200}
-          className=" rounded-full pb-0 h-40  w-40 ring-2 ring-indigo-500 object-cover z-80 "
+          width={161}
+          height={161}
+          className=" rounded-full pb-0  object-contain z-40 "
         /> 
-     
+        
        <div className= " z-20">
         <h2 className="text-l uppercase text-gray-500 pb-2 pt-5 tracking-[15px]"> {pageInfo?.role}</h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10 ">

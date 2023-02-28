@@ -1,12 +1,13 @@
 
 
+import {ChevronRightIcon } from "@heroicons/react/24/outline"
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ReactPlayer from 'react-player'
 
-import { urlFor } from "../../lib/urlFor";
+import { urlFor } from "../../lib/sanity.client";
 import {Project} from "../../types"
 
 type Props = {
@@ -14,9 +15,19 @@ type Props = {
     
 };
 
+
+
 function Projects({projects}: Props) {
   
+  // projects?.map((project, i ) => {
 
+  //   project?.technologies?.map((technology)=> {
+     
+  //     const techImage = urlFor(technology?.image)
+  //     console.log(techImage + "<------ THIS IS THE URL I GOT")
+  //     return techImage
+  //   })
+  //   })
   return (
   <motion.div
       initial={{ opacity: 0 }}
@@ -27,6 +38,7 @@ function Projects({projects}: Props) {
       <h3 className="absolute top-12 uppercase tracking-[20px]  text-gray-500 text-2xl   z-30 lg:top-[5%] sm:top-20">
         Projects
       </h3>
+      <ChevronRightIcon className="h-12 w-12 sm:h-10 sm:w-10 z-40 absolute ml-[90vw] text-blue-400/30 animate-ping"/>
       <div className="relative w-full flex sm:[w-100%] overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-purple-700 ">
         {projects?.map((project, i ) => (
          <motion.div 
@@ -49,7 +61,7 @@ function Projects({projects}: Props) {
               
            
                      <ReactPlayer
-            streamType="on-demand"
+            streamtype="on-demand"
             key={project._id}
             url={project?.promoVideo}
             height= '100%'
@@ -73,16 +85,20 @@ function Projects({projects}: Props) {
                 </h4>
                 <div className="flex items-center space-x-2 lg:-mt-10 justify-center"
                 >
-                    {project?.technologies.map((technology)=> (
-                        
+                    {project?.technologies?.map((technology)=> (
+    
+                       
                         <Image
-                       width={10}
-                       height={10}
-                        className="h-10 w-10"
-                        key={technology._id}
-                        src={urlFor(technology.image).url()}
+                       width={70}
+                       height={70}
+                        className= "sm:h-[12%] sm:w-[12%]"
+                        key={technology?._id}
+                  
+                        src={urlFor(technology?.image)}
+                        
                         alt=""
                         />
+                        
                     ))}
                 </div>
                 <p className="text-lg  flex flex-col shadow-proj shadow-teal-600/70  text-center h-32 bg-gray-700/30 overflow-y-scroll overflow-hidden scrollbar-track-gray-400/20 scrollbar-thumb-indigo-400  px-5 md:text-left sm:h-48 sm:pb-20 ">

@@ -15,7 +15,6 @@ export default defineType({
     defineField({
       name: 'progress',
       title: 'Progress',
-    
       type: 'number',
       description: "Progress of skill from 0 to 100%",
     

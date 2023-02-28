@@ -39,6 +39,8 @@ next-env.d.ts
 
 #sanity
 sanity/node_modules
+sanity.config.ts
+sanity.cli.ts
 # Dependencies
 sanity/.pnp
 sanity/.pnp.js

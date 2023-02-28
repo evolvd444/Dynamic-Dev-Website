@@ -1,6 +1,5 @@
-import { mux } from '@mux/playback-core/*';
-import { number } from 'prop-types';
 
+import type {Image} from 'sanity'
 
 interface SanityBody {
     _createdAt: string;
@@ -9,13 +8,13 @@ interface SanityBody {
     _updatedAt:string;
 }
 
-interface Image {
-    _type: "image";
-    asset: {
-        _ref: string;
-        _type: "reference";
-    };
-}
+// interface Image {
+//     _type: "image";
+//     asset: {
+//         _ref: string;
+//         _type: "reference";
+//     };
+// }
 
 export interface PageInfo extends SanityBody {
     _type: "pageInfo";
@@ -30,11 +29,10 @@ export interface PageInfo extends SanityBody {
 }
 
 export interface Technology extends SanityBody {
-    [x: string]: any;
     _type: "skill";
     title?: string;
     progress?: string;
-    profilePic?: Image;
+    image?: Image;
 }
 
 export interface Skill extends SanityBody {

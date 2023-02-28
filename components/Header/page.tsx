@@ -25,7 +25,7 @@ function Header({ socials }: Props) {
         transition={{
             duration:1.5,
         }}
-        className= "flex flex-row items-center">
+        className= "flex flex-row items-center animate-bounce">
             {/* Social Icons*/}
             {socials?.map((social) => (
             <SocialIcon

@@ -4,20 +4,23 @@ import {createClient, groq} from 'next-sanity'
 import {cache} from 'react'
 
 import { Experience, PageInfo, Project, Skill, Social } from "../types";
+import { useCdn } from "./sanity.api";
 import { experienceQuery, projectQuery, skillsQuery, socialsQuery } from './sanity.queries';
 
-export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID // "pv8y60vp"
-export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET // "production"
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION // "2022-11-16"
-const useCdn = process.env.NODE_ENV === 'production'
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+export const apiVersion = '2021-10-21'
+
 
 export const client = createClient({
   projectId,
   dataset,
-  apiVersion, // https://www.sanity.io/docs/api-versioning
-  useCdn, // if you're using ISR or only static generation at build time then you can set this to `false` to guarantee no stale content
+  apiVersion,
+  useCdn,
+   // https://www.sanity.io/docs/api-versioning
+  // if you're using ISR or only static generation at build time then you can set this to `false` to guarantee no stale content
   token:
-  process.env.SANITY_API_READ_TOKEN || process.env.SANITY_API_WRITE_TOKEN,
+   process.env.DEV_ENV_TOKEN
 })
 
 
@@ -163,7 +166,10 @@ export const sanityClient = (token?: string) => {
 
     const projects = await sanityClient(token)?.fetch(projectQuery)
     // const projectsJson = JSON.stringify(projects)
-    //   console.log(projects ,"this is just the PROJECTS Info---->" + projectsJson)
+    //   console.log( projects ,"this is just the PROJECTS Info---->" + projectsJson)
+    //   console.log(projects.technologies)
+ 
+ 
     return projects
   }
   
@@ -196,5 +202,21 @@ export const sanityClient = (token?: string) => {
  * Set up a helper function for generating Image URLs with only the asset reference data in your documents.
  * Read more: https://www.sanity.io/docs/image-url
  **/
-export const urlFor = (source: any) =>
-  createImageUrlBuilder(client).image(source);
+
+import imageUrlBuilder from "@sanity/image-url";
+
+export const urlFor = (source: any) => {
+    if (source === undefined || source === null) {
+        source = "https://cdn.sanity.io/images/iuagzy0t/production/509f9602dc3b1a92bbb49b5b83ce220776afd62c-3465x3465.png"
+        return(source)
+    }
+    // const test= JSON.stringify(source) 
+    // console.log(test  + "< ---------- THIS IS THE SOURCE I GOT!")
+    const builder =  imageUrlBuilder(sanityClient()).image(source);
+// console.log(sanityClient())
+const imageUrl = builder.image(source).url();
+//   console.log(imageUrl  + "< ---------- THIS IS THE URL I JUST GOT!")
+
+  return imageUrl;
+    
+} 

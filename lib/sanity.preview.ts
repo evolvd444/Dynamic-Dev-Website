@@ -13,7 +13,7 @@ if (!projectId || !dataset) {
     `Missing projectId or dataset. Check your sanity.json or .env`
   );
 }
-
+console.log(projectId , dataset)
 export const usePreview = definePreview({
   projectId,
   dataset,
