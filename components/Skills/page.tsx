@@ -16,7 +16,7 @@ const Skills = ({ skills }: Props) => {
         <h3 className="absolute top-12 sm:top-20 uppercase tracking-[20px]  text-gray-500 text-2xl ">
           Skills
         </h3>
-        <h3 className="absolute top-20 max-w-[607px] sm:top-28 pt-4 uppercase tracking-[3px] text-gray-500 text-md animate-pulse">
+        <h3 className="absolute top-20 max-w-[607px] sm:top-28 pt-4 uppercase tracking-[3px] text-gray-500 text-md animate-pulse z-50">
           Hover over one of my skills to reveal which ones were used in this website:
         </h3>
        
