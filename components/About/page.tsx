@@ -22,7 +22,7 @@ const About = ({ pageInfo }: Props) => {
       whileInView={{ opacity: 1 }}
       className="flex flex-col sm:top-12 sm:w-[90vw] sm:h-[100vh] relative text-center h-screen md:mt-[0px] md:mb-12 md:h-[90vh] md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 sm:top-[10.5%] sm: sm:ml-4 md:top-24 lg:top-[7%] uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] z-20">
+      <h3 className="absolute top-24 sm:top-[10.5%] sm: sm:ml-4 md:top-24 uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] z-20">
         {" "}
         About{" "}
       </h3>

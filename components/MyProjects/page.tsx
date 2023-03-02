@@ -42,13 +42,13 @@ function Projects({projects}: Props) {
       <div className="relative w-full flex sm:[w-100%] overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-purple-700 ">
         {projects?.map((project, i ) => (
          <motion.div 
-          key={project._id}
+          key={project.title}
           className=" w-screen  flex-shrink-0 flex-wrap snap-center flex-row flex  items-center overflow-y-scroll justify-center p-2 md:p-7 h-screen sm:w-[100%] xl:mt-12  "
          >
             
-            <Link key={project._id} className= "h-[20%] -mt-12 -mb-20" href={project.linkToBuild}>     
+            <Link key={project.title} className= "h-[20%] -mt-12 -mb-20" href={project.linkToBuild}>     
            <motion.div
-                key={project._id}
+                key={project.title}
                 initial={{
                   y: -300,
                   opacity: 0,
@@ -62,7 +62,7 @@ function Projects({projects}: Props) {
            
                      <ReactPlayer
             streamtype="on-demand"
-            key={project._id}
+            key={project.title}
             url={project?.promoVideo}
             height= '100%'
             width='100%'
@@ -92,7 +92,7 @@ function Projects({projects}: Props) {
                        width={70}
                        height={70}
                         className= "sm:h-[12%] sm:w-[12%]"
-                        key={technology?._id}
+                        key={technology?.title}
                   
                         src={urlFor(technology?.image)}
                         

@@ -27,13 +27,13 @@ const ExperienceCard = ({ experience }: Props) => {
         viewport={{
           once: true,
         }}
-        className="relative mt-20 w-35 h-35 px-10 lg:pt-7 lg:pb-7 lg:h-[100vh] max-w-[560px] max-h-[710px] lg:overflow-y-hidden overflow-y-scroll pt-12 pb-12 mb-20 lg:w-[55vh]  md:w-[50vw]  xl:w-[600px] bg-gradient-to-r from-[rgb(13,3,35)]  to-[rgba(45,187,137,0.15)] cursor-pointer sm:w-[88%] sm:h-[900px] sm:mb-5 sm:pt-7 sm:pb-0 sm:mt-20 sm:p-5"
+        className="relative mt-20 w-35 h-35 px-10 lg:pt-7 lg:pb-7 lg:h-[100vh] max-w-[560px] max-h-[710px]  overflow-y-scroll pt-12 pb-12 mb-20 lg:w-[55vh]  md:w-[50vw]  xl:w-[600px] bg-gradient-to-r from-[rgb(13,3,35)]  to-[rgba(45,187,137,0.15)] cursor-pointer sm:w-[88%] sm:h-[900px] sm:mb-5 sm:pt-7 sm:pb-0 sm:mt-20 sm:p-5"
       >
-        <div className=" absolute overflow-x-hidden sm:ml-[111px]  content-center sm:mt-[1px] w-35 h-35 md:ml-[15vw] ml-[19.1vh] sm:w-[78px] sm:h-[78px] mb-7 h-[79px] w-[79px] lg:ml-[32.5%] xl:w-[150px] xl:h-[150px]  cursor-pointer rounded-full ring-4 ring-white/40 animate-pulse z-0" />
+        <div className=" absolute overflow-x-hidden sm:ml-[111px]  content-center sm:mt-[1px] w-35 h-35 md:ml-[15vw] ml-[19.1vh] sm:w-[78px] sm:h-[78px] mb-7 h-[79px] w-[79px] lg:ml-[178.5px] xl:w-[150px] xl:h-[150px]  cursor-pointer rounded-full ring-4 ring-white/40 animate-pulse z-0" />
         <motion.img
           src={urlFor(experience?.companyImage)}
           alt=" "
-          className="ml-[19vh] opacity-100 mb-[25px] md:ml-[15vw] sm:ml-[110px] sm:shadow-lg sm:shadow-purple-400/90  lg:ml-[40%] object-center object-cover container h-[80px] w-[80px] z-30 rounded-full"
+          className="ml-[19vh] opacity-100 mb-[25px] md:ml-[15vw] sm:ml-[110px] sm:shadow-lg sm:shadow-purple-400/90  lg:ml-[178.5px] object-center object-cover container h-[80px] w-[80px] z-30 rounded-full"
         />
 
         <div className="px-0 sm:py-0 md:px-0">
@@ -64,7 +64,7 @@ const ExperienceCard = ({ experience }: Props) => {
                 : new Date(experience.dateEnded).toDateString()}
                 </p>
 
-          <ul className="list-disc space-y-4 ml-5 text-lg overflow-y-scroll scrollbar-thin scrollbar-thumb-indigo-900/90 ">
+          <ul className="list-disc space-y-4 ml-5 text-lg  overflow-y-scroll scrollbar-thin scrollbar-thumb-indigo-900/90 z-10">
             {experience.points.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
