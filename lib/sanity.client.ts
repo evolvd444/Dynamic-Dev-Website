@@ -165,9 +165,9 @@ export const sanityClient = (token?: string) => {
   }): Promise<Project[] | undefined> {
 
     const projects = await sanityClient(token)?.fetch(projectQuery)
-    // const projectsJson = JSON.stringify(projects)
-    //   console.log( projects ,"this is just the PROJECTS Info---->" + projectsJson)
-    //   console.log(projects.technologies)
+    const projectsJson = JSON.stringify(projects)
+      console.log( projects ,"this is just the PROJECTS Info---->" + projectsJson)
+      console.log(projects?.image)
  
  
     return projects

@@ -1,4 +1,4 @@
-
+"use client"
 
 import {ChevronRightIcon } from "@heroicons/react/24/outline"
 import { motion } from "framer-motion";
@@ -42,13 +42,13 @@ function Projects({projects}: Props) {
       <div className="relative w-full flex sm:[w-100%] overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 sm:scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-purple-700 ">
         {projects?.map((project, i ) => (
          <motion.div 
-          key={project.title}
+          key={project._id}
           className=" w-screen  flex-shrink-0 flex-wrap snap-center flex-row flex  items-center overflow-y-scroll justify-center p-2 md:p-7 h-screen sm:w-[100%] xl:mt-12  "
          >
             
-            <Link key={project.title} className= "h-[20%] -mt-12 -mb-20" href={project.linkToBuild}>     
+            <Link key={project._id} className= "h-[20%] -mt-12 -mb-20" href={project.linkToBuild}>     
            <motion.div
-                key={project.title}
+                key={project._id}
                 initial={{
                   y: -300,
                   opacity: 0,
@@ -58,17 +58,17 @@ function Projects({projects}: Props) {
                 viewport={{ once: true }}
                 className=" object-center shadow-proj shadow-purple-400/50  -z-10 md:w-[80vw] md:h-[40vh] md:mt-12vh sm:h-[53vw] sm:w-[92vw] sm:mt-12  sm:mr-3  mt-0 justify-center items-center mb-10 flex lg:mt-[0px] lg:w-[47vw] lg:h-[47vh] xl:mt-10 xl:h-[40vh] xl:w-[40vw]"
           >
-              
-           
-                     <ReactPlayer
+                         
+               
+                  <ReactPlayer 
             streamtype="on-demand"
-            key={project.title}
+            key={project?._id}
             url={project?.promoVideo}
             height= '100%'
             width='100%'
             alt="Project Promo"
+            />
            
-             />
               
             
 

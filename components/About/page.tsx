@@ -22,7 +22,7 @@ const About = ({ pageInfo }: Props) => {
       whileInView={{ opacity: 1 }}
       className="flex flex-col sm:top-12 sm:w-[90vw] sm:h-[100vh] relative text-center h-screen md:mt-[0px] md:mb-12 md:h-[90vh] md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-24 sm:top-[10.5%] sm: sm:ml-4 md:top-24 uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] z-20">
+      <h3 className="absolute top-24 sm:top-[10.5%] sm: sm:ml-4  uppercase tracking-[20px] text-[#f7fafab1] text-2xl drop-shadow-md [10px_30v px_35px_#15c3f3f1] z-20">
         {" "}
         About{" "}
       </h3>
@@ -39,7 +39,7 @@ const About = ({ pageInfo }: Props) => {
         viewport={{
           once: true,
         }}
-        className=" md:mt-0 flex mx-auto px-0 sm:flex-col sm:w-[180px] sm:h-[160px] flex-shrink-0 md:justify-evenly md:w-[0vw] md:h-[1100px] lg:-mt-10 lg:mb-40 sm:-mt-[80px] sm:mr-[42vw]  xl:w-[500px] xl:h-[600px]"
+        className=" md:mt-0 flex mx-auto px-0 sm:flex-col sm:w-[180px] sm:h-[160px] flex-shrink-0 md:justify-evenly md:w-[0vw] md:h-[1100px] lg:mt-20 lg:mb-40 sm:-mt-[80px] sm:mr-[42vw]  xl:w-[500px] xl:h-[600px]"
       >
         <div className=" sm:w-[280px] sm:flex-col sm:h-[675px]  sm:-mt-[0] md:z-0 md:w-[45vw]  md:mt-[40vh] md:-ml-3 md:mr-0  md:h-[250px] lg:mt-[7vh] lg:h-[32vh] xl:w-[27vw] xl:h-[49vh] z-40">
           <div className="absolute sm:z-0 md:z-0 sm:animate-pulse sm:ring-teal-500/80 sm:ml-[42px] sm:animate-none sm:h-[175px]  sm:w-[196px] lg: lg:mt-[40vh] lg:z-10  sm:mt-[97px]  rounded ring-8 lg:rounded object-center xl:ring-blue-600/80  lg:ring-blue-500/40 animate-pulse  lg:w-[450px] lg:h-[150px] lg:-ml-[90px] md:w-[930px] md:mt-[100px] md:-ml-[50px]  md:h-[250px] xl:w-[24.5vw] xl:h-[50vh] xl:z-0 xl:mt-32 z-30" />
@@ -61,7 +61,7 @@ const About = ({ pageInfo }: Props) => {
           <span className="underline decoration-[#45f2bebe]">little</span>{" "}
           backround
         </h4>
-        <p className="text-base ">
+        <p className="text-base h-[30vh] md:h-[23vh] lg:h-[20vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-indigo-900/90">
          {pageInfo?.backgroundInformation}
         </p>
       </div>
